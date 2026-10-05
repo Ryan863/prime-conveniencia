@@ -77,45 +77,47 @@ export const Categories: React.FC = () => {
 
   useGSAP(
     () => {
-      // Staggered progressive reveal triggered by ScrollTrigger (start: "top 85%")
       const cards = gsap.utils.toArray<HTMLElement>('.category-card');
 
-      gsap.from(cards, {
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-        y: 45,
-        opacity: 0,
-        scale: 0.95,
-        rotationZ: (index: number) => (index % 2 === 0 ? -1.5 : 1.5),
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-      });
+      gsap.fromTo(
+        cards,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: 'top 92%',
+            once: true,
+          },
+          clearProps: 'transform,opacity',
+        }
+      );
     },
     { scope: sectionRef }
   );
 
   return (
-    <section id="catalogo" ref={sectionRef} className="py-20 md:py-24 relative bg-[#0A0C0F] overflow-hidden">
+    <section id="catalogo" ref={sectionRef} className="py-14 md:py-20 relative bg-[#0A0C0F] overflow-hidden">
       {/* Background illumination */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#FF2E93]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00E5FF]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-2.5">
               <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>Catálogo Rápido e Completo</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Tudo o que você precisa para o seu <span className="bg-gradient-to-r from-[#FF2E93] to-[#00E5FF] bg-clip-text text-transparent">rolê</span> ou churrasco.
             </h2>
-            <p className="mt-3 text-slate-300 text-sm sm:text-base">
+            <p className="mt-2 text-slate-300 text-sm sm:text-base">
               Escolha uma categoria abaixo e peça diretamente pelo WhatsApp com atendimento ágil em Chapecó.
             </p>
           </div>
@@ -124,7 +126,7 @@ export const Categories: React.FC = () => {
             href={getWhatsAppUrl('Olá! Gostaria de ver o cardápio completo de bebidas da Prime Beer.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start md:self-auto inline-flex items-center gap-2 text-sm font-semibold text-[#00E5FF] hover:text-white transition-colors group"
+            className="self-start md:self-auto inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#00E5FF] hover:text-white transition-colors group"
           >
             <span>Ver Cardápio Completo no WhatsApp</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -132,7 +134,7 @@ export const Categories: React.FC = () => {
         </div>
 
         {/* Bento Grid of 4 Categories */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {CATEGORIES.map((cat) => {
             const isPink = cat.neonColor === 'pink';
             const isCyan = cat.neonColor === 'cyan';
@@ -184,26 +186,26 @@ export const Categories: React.FC = () => {
                 </div>
 
                 {/* Content Details */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-white transition-colors">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white group-hover:text-white transition-colors">
                       {cat.title}
                     </h3>
-                    <p className="text-sm font-semibold text-slate-300 mt-1 mb-2.5">
+                    <p className="text-xs sm:text-sm font-semibold text-slate-300 mt-1 mb-2">
                       {cat.tagline}
                     </p>
-                    <p className="text-sm text-slate-400 leading-relaxed mb-5">
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
                       {cat.description}
                     </p>
 
                     {/* Popular items list */}
-                    <div className="space-y-2 mb-5 pt-3.5 border-t border-white/[0.06]">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <div className="space-y-1.5 mb-4 pt-3 border-t border-white/[0.06]">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                         Mais pedidos na Prime Beer:
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-medium">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-300 font-medium">
                         {cat.popularItems.map((item, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
+                          <div key={idx} className="flex items-center gap-1.5">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF] flex-shrink-0" />
                             <span className="truncate">{item}</span>
                           </div>
@@ -213,12 +215,12 @@ export const Categories: React.FC = () => {
                   </div>
 
                   {/* Direct WhatsApp Action for this Category */}
-                  <div className="pt-3.5 border-t border-white/[0.08] flex items-center justify-between gap-4">
+                  <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between gap-3">
                     <a
                       href={getWhatsAppUrl(cat.whatsAppMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-5 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-[#22C55E] to-[#10B981] hover:from-[#16a34a] hover:to-[#059669] shadow-[0_0_20px_rgba(34,197,94,0.25)] hover:shadow-[0_0_30px_rgba(34,197,94,0.45)] transition-all flex items-center justify-center gap-2 group/btn"
+                      className="w-full py-3 px-4 rounded-2xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#22C55E] to-[#10B981] hover:from-[#16a34a] hover:to-[#059669] shadow-[0_0_20px_rgba(34,197,94,0.25)] hover:shadow-[0_0_30px_rgba(34,197,94,0.45)] transition-all flex items-center justify-center gap-2 group/btn"
                     >
                       <MessageCircle className="w-4 h-4 fill-white/20 group-hover/btn:scale-110 transition-transform" />
                       <span>Pedir {cat.title.split('&')[0].trim()} no WhatsApp</span>

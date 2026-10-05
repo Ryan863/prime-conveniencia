@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Categories } from './components/Categories';
@@ -9,6 +11,19 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export function App() {
+  useEffect(() => {
+    // Ensure ScrollTrigger accurately calculates heights after initial render and image load
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 300);
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', handleLoad);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0A0C0F] text-slate-100 flex flex-col relative selection:bg-[#FF2E93] selection:text-white">
       {/* Top Navbar */}
