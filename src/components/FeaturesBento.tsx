@@ -29,51 +29,51 @@ export const FeaturesBento: React.FC = () => {
   );
 
   return (
-    <section id="diferenciais" ref={containerRef} className="py-24 relative bg-[#0A0C0F] overflow-hidden">
+    <section id="diferenciais" ref={containerRef} className="py-20 md:py-24 relative bg-[#0E1117] overflow-hidden">
       {/* Background illumination */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-[#FF2E93]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#00E5FF]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-3">
             <Award className="w-3.5 h-3.5 text-[#00E5FF]" />
             <span>Padrão Prime de Qualidade</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Por que a Prime Beer é a escolha certa <span className="bg-gradient-to-r from-[#FF2E93] to-[#00E5FF] bg-clip-text text-transparent">em Chapecó</span>?
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             Combinamos conveniência ágil, bebidas na temperatura ideal e atendimento de confiança para o seu momento de lazer.
           </p>
         </div>
 
-        {/* Bento Grid layout echoing the reference style */}
+        {/* Bento Grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Card 1 (Large - Spans 2 cols on MD) */}
-          <div className="bento-feature-card md:col-span-2 rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#00E5FF]/50 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
+          <div className="bento-feature-card md:col-span-2 rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#00E5FF]/50 p-6 sm:p-7 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
               <Snowflake className="w-36 h-36 text-[#00E5FF]" />
             </div>
 
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-[#00E5FF]/15 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-6">
-                <Snowflake className="w-6 h-6" />
+              <div className="w-11 h-11 rounded-2xl bg-[#00E5FF]/15 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] mb-5">
+                <Snowflake className="w-5 h-5" />
               </div>
 
-              <div className="inline-block px-3 py-1 rounded-full bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/20 text-xs font-mono font-bold mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/20 text-[11px] font-mono font-bold mb-3">
                 CONTROLE TÉRMICO RIGOROSO
               </div>
 
-              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white mb-3">
+              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white mb-2.5">
                 Cerveja Estupidamente Gelada a -4°C
               </h3>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mb-6">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mb-5">
                 Nossos freezers industriais operam em curvas térmicas controladas para que as latas e long necks cheguem na sua mão no limite exato de congelamento: trincando e prontas para beber.
               </p>
 
               {/* Metric bar */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/[0.08]">
+              <div className="grid grid-cols-3 gap-4 pt-5 border-t border-white/[0.08]">
                 <div>
                   <div className="font-mono text-xl sm:text-2xl font-black text-[#00E5FF]">-4.2°C</div>
                   <div className="text-xs text-slate-400">Ponto Ideal</div>
@@ -91,19 +91,19 @@ export const FeaturesBento: React.FC = () => {
           </div>
 
           {/* Card 2 (1 col) - Rapid Delivery */}
-          <div className="bento-feature-card rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#FF2E93]/50 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-[#FF2E93]/15 border border-[#FF2E93]/30 flex items-center justify-center text-[#FF2E93] mb-6">
-              <Zap className="w-6 h-6" />
+          <div className="bento-feature-card rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#FF2E93]/50 p-6 sm:p-7 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
+            <div className="w-11 h-11 rounded-2xl bg-[#FF2E93]/15 border border-[#FF2E93]/30 flex items-center justify-center text-[#FF2E93] mb-5">
+              <Zap className="w-5 h-5" />
             </div>
 
-            <div className="inline-block px-3 py-1 rounded-full bg-[#FF2E93]/10 text-[#FF2E93] border border-[#FF2E93]/20 text-xs font-mono font-bold mb-3">
+            <div className="inline-block px-3 py-1 rounded-full bg-[#FF2E93]/10 text-[#FF2E93] border border-[#FF2E93]/20 text-[11px] font-mono font-bold mb-3">
               AGILIDADE TOTAL
             </div>
 
-            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white mb-3">
+            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white mb-2.5">
               Entrega Rápida em Chapecó
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">
               Sua bebida chega sem esquentar. Despacho ágil com entregadores experientes na rota de Chapecó.
             </p>
 
@@ -117,19 +117,19 @@ export const FeaturesBento: React.FC = () => {
           </div>
 
           {/* Card 3 (1 col) - Combos & Mix Completo */}
-          <div className="bento-feature-card rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-amber-400/50 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6">
-              <Flame className="w-6 h-6" />
+          <div className="bento-feature-card rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-amber-400/50 p-6 sm:p-7 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
+            <div className="w-11 h-11 rounded-2xl bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5">
+              <Flame className="w-5 h-5" />
             </div>
 
-            <div className="inline-block px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-xs font-mono font-bold mb-3">
+            <div className="inline-block px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-[11px] font-mono font-bold mb-3">
               CHURRASCO & ROLE
             </div>
 
-            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white mb-3">
+            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white mb-2.5">
               Tudo no Mesmo Ponto
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">
               Bebida, gelo filtrado, carvão de alta combustão, petiscos e tabacaria. Economize tempo e resolva tudo em uma única parada.
             </p>
 
@@ -146,18 +146,18 @@ export const FeaturesBento: React.FC = () => {
           </div>
 
           {/* Card 4 (Spans 2 cols on MD) - Pagamentos & Facilidade */}
-          <div className="bento-feature-card md:col-span-2 rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#22C55E]/50 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
+          <div className="bento-feature-card md:col-span-2 rounded-3xl bg-[#161922]/90 border border-white/10 hover:border-[#22C55E]/50 p-6 sm:p-7 backdrop-blur-xl shadow-2xl relative overflow-hidden group transition-all duration-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E] mb-6">
-                  <CreditCard className="w-6 h-6" />
+                <div className="w-11 h-11 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E] mb-5">
+                  <CreditCard className="w-5 h-5" />
                 </div>
 
-                <div className="inline-block px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20 text-xs font-mono font-bold mb-3">
+                <div className="inline-block px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/20 text-[11px] font-mono font-bold mb-3">
                   SEM BUROCRACIA
                 </div>
 
-                <h3 className="font-display text-2xl font-extrabold text-white mb-3">
+                <h3 className="font-display text-2xl font-extrabold text-white mb-2.5">
                   Formas de Pagamento Facilitadas
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed max-w-lg">

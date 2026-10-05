@@ -1,6 +1,6 @@
 # 🍻 Prime Beer Conveniência - Landing Page & Web App
 
-Landing Page / Web App de alta performance da **Prime Beer Conveniência**, localizada em **Chapecó - SC (Bairro Alvorada)**. Interface moderna com estética **Dark Neon Cyber-Bar**, animações avançadas com **GSAP (GreenSock) + ScrollTrigger**, simulador interativo de pedidos para WhatsApp e navegação GPS integrada.
+Landing Page / Web App de alta performance da **Prime Beer Conveniência**, localizada em **Chapecó - SC (Bairro Alvorada)**. Interface moderna com estética **Dark Neon Cyber-Bar**, animações avançadas com **GSAP (GreenSock) + ScrollTrigger**, espaçamentos consistentes e navegação GPS integrada.
 
 ---
 
@@ -8,19 +8,19 @@ Landing Page / Web App de alta performance da **Prime Beer Conveniência**, loca
 
 - **Fundo Principal:** `#0A0C0F` a `#12151B` com iluminação radial ambiente e grid cyber sutil.
 - **Superfícies & Cards:** `#161922` com bordas translúcidas (`rgba(255, 255, 255, 0.08)`), reflexos metálicos cromados (*4-point chrome stars*) e efeito glassmorphic.
-- **Neon Primário (Pink / Magenta):** `#FF2E93` / `#E11D74` para destaques de foco, bordas ativas e text glow.
-- **Neon Secundário (Cyan / Turquesa):** `#00E5FF` / `#00D2D3` para acentos gráficos, reflexos e badges técnicos.
+- **Neon Primário (Pink / Magenta):** `#FF2E93` e `#E11D74` para destaques de foco, bordas ativas e text glow.
+- **Neon Secundário (Cyan / Turquesa):** `#00E5FF` e `#00D2D3` para acentos gráficos, reflexos e badges técnicos.
 - **Status Ativo / WhatsApp (Neon Green):** `#22C55E` / `#10B981` com indicador em tempo real "Aberto Agora" e botões diretos de ação.
 - **Tipografia:** `Syne` (títulos de impacto) e `Plus Jakarta Sans` (leitura e interface).
 
 ---
 
-## ⚡ Funcionalidades
+## ⚡ Estrutura & Funcionalidades
 
 1. **Header / Navbar:**
    - Logotipo exclusivo em vetor neon com gradiente pink/cyan.
    - Indicador de status em tempo real com beacon luminoso (🟢 *Aberto Agora*).
-   - Atalho rápido com efeito magnético no cursor.
+   - Atalho rápido magnético para o WhatsApp.
 
 2. **Hero Section de Alto Impacto:**
    - Chamada direta: *"Cerveja trincando, destilados e conveniência completa na sua mão."*
@@ -35,9 +35,11 @@ Landing Page / Web App de alta performance da **Prime Beer Conveniência**, loca
    - 🍿 **Snacks & Tabacaria:** Petiscos, aperitivos crocantes e tabacaria completa.
    - Cada categoria possui botão com mensagem pré-formatada para o WhatsApp.
 
-4. **Montador de Pedido Interativo (Fast Order Builder):**
-   - Permite que o cliente selecione produtos, ajuste quantidades (+/-), escolha entrega ou retirada no balcão e informe seu endereço/bairro em Chapecó.
-   - Gera um pedido estruturado e envia com 1 clique diretamente para o WhatsApp oficial (+55 49 9834-3314).
+4. **Diferenciais Prime em Bento Grid:**
+   - Controle térmico rigoroso com freezers calibrados a -4°C.
+   - Despacho ágil para entrega rápida em Chapecó.
+   - Variedade completa no mesmo local (bebidas, carvão sem cheiro forte, gelos saborizados).
+   - Pagamento facilitado (Pix, crédito, débito e dinheiro).
 
 5. **Painel LED de Horário de Funcionamento:**
    - Visual digital estilo cyber com destaque automático para o dia da semana atual:
@@ -53,9 +55,8 @@ Landing Page / Web App de alta performance da **Prime Beer Conveniência**, loca
    - Botão para copiar endereço com feedback instantâneo.
    - Mapa interativo estilizado em tema dark com marcador radar pulsante.
 
-7. **Diferenciais & FAQ:**
-   - Bento grid com métricas de refrigeração industrial, agilidade e pagamentos (Pix, cartões e dinheiro).
-   - Sanfona de perguntas frequentes para tirar dúvidas rápidas.
+7. **FAQ (Perguntas Frequentes):**
+   - Sanfona com perguntas e respostas sobre entrega, formas de pagamento, barril de chopp e temperatura.
 
 8. **Botão Flutuante Persistente:**
    - Fixado no canto inferior direito com pulsos luminosos contínuos do GSAP e efeito magnético ao passar o mouse.
@@ -65,7 +66,7 @@ Landing Page / Web App de alta performance da **Prime Beer Conveniência**, loca
 ## 🛠️ Stack Tecnológica
 
 - **React 19** + **TypeScript**
-- **Vite 6** (Build rápido em ~700ms)
+- **Vite 6**
 - **Tailwind CSS v4** (Design System com tokens personalizados)
 - **GSAP (GreenSock)** + **ScrollTrigger** + `@gsap/react` com escopo em `useGSAP()` para limpeza segura do ciclo de vida
 - **Lucide Icons**

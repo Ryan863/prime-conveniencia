@@ -1,10 +1,9 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Categories } from './components/Categories';
-import { OrderBuilder } from './components/OrderBuilder';
+import { FeaturesBento } from './components/FeaturesBento';
 import { HoursPanel } from './components/HoursPanel';
 import { LocationSection } from './components/LocationSection';
-import { FeaturesBento } from './components/FeaturesBento';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -15,27 +14,24 @@ export function App() {
       {/* Top Navbar */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections with Organized Vertical Rhythm */}
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* 1. Hero Section */}
         <Hero />
 
-        {/* Categories / Catálogo Rápido Bento */}
+        {/* 2. Catálogo Rápido Bento */}
         <Categories />
 
-        {/* Interactive Order Builder / Simulador de Pedidos */}
-        <OrderBuilder />
-
-        {/* Operating Hours LED Dashboard */}
-        <HoursPanel />
-
-        {/* Differentials & Bento Grid Features */}
+        {/* 3. Diferenciais Prime em Bento Grid */}
         <FeaturesBento />
 
-        {/* Location & GPS Navigation */}
+        {/* 4. Painel LED de Horários & Live Status */}
+        <HoursPanel />
+
+        {/* 5. Localização & Navegação GPS */}
         <LocationSection />
 
-        {/* FAQ Section */}
+        {/* 6. FAQ Section */}
         <FaqSection />
       </main>
 

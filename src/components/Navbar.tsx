@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Logo } from './Logo';
-import { getCurrentStoreStatus, getWhatsAppUrl, FORMATTED_PHONE } from '../utils/status';
-import { MessageCircle, Clock, MapPin, Sparkles, Menu, X, ShoppingBag } from 'lucide-react';
+import { getCurrentStoreStatus, getWhatsAppUrl } from '../utils/status';
+import { MessageCircle, Clock, MapPin, Menu, X, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 
 export const Navbar: React.FC = () => {
@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
   return (
     <header
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl bg-[#0A0C0F]/80 border-b border-white/[0.07]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl bg-[#0A0C0F]/85 border-b border-white/[0.07]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand */}
@@ -63,11 +63,11 @@ export const Navbar: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a
-            href="#montar-pedido"
-            className="text-sm font-medium text-slate-300 hover:text-[#FF2E93] transition-colors flex items-center gap-1.5 group"
+            href="#diferenciais"
+            className="text-sm font-medium text-slate-300 hover:text-[#00E5FF] transition-colors flex items-center gap-1.5 group"
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-[#FF2E93]" />
-            <span>Montar Pedido</span>
+            <Sparkles className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#00E5FF]" />
+            <span>Diferenciais</span>
           </a>
           <a
             href="#horarios"
@@ -83,19 +83,13 @@ export const Navbar: React.FC = () => {
             <MapPin className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#00E5FF]" />
             <span>Localização</span>
           </a>
-          <a
-            href="#diferenciais"
-            className="text-sm font-medium text-slate-300 hover:text-[#00E5FF] transition-colors"
-          >
-            Diferenciais
-          </a>
         </nav>
 
         {/* Right Actions: Status Badge & WhatsApp Button */}
         <div className="hidden sm:flex items-center gap-4">
           {/* Status Badge */}
           <div
-            className={`px-3 py-1.5 rounded-full border text-xs font-semibold flex items-center gap-2 transition-all ${
+            className={`px-3.5 py-1.5 rounded-full border text-xs font-semibold flex items-center gap-2 transition-all ${
               status.isOpen
                 ? 'bg-[#22C55E]/10 border-[#22C55E]/30 text-[#22C55E] shadow-[0_0_15px_rgba(34,197,94,0.15)]'
                 : 'bg-amber-500/10 border-amber-500/30 text-amber-400'
@@ -157,27 +151,26 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0A0C0F]/95 backdrop-blur-2xl border-b border-white/10 px-4 py-6 space-y-4 animate-in slide-in-from-top-4 duration-200">
-          <div className="flex flex-col gap-3">
+        <div className="md:hidden bg-[#0A0C0F]/95 backdrop-blur-2xl border-b border-white/10 px-4 py-5 space-y-3 animate-in slide-in-from-top-4 duration-200">
+          <div className="flex flex-col gap-2">
             <a
               href="#catalogo"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2 rounded-lg hover:bg-white/5"
+              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2.5 rounded-lg hover:bg-white/5"
             >
               Catálogo de Bebidas
             </a>
             <a
-              href="#montar-pedido"
+              href="#diferenciais"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-[#FF2E93] hover:text-[#ff5ea8] p-2 rounded-lg hover:bg-white/5 flex items-center justify-between"
+              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2.5 rounded-lg hover:bg-white/5"
             >
-              <span>Montar Pedido Rápido</span>
-              <Sparkles className="w-4 h-4" />
+              Diferenciais Prime
             </a>
             <a
               href="#horarios"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2 rounded-lg hover:bg-white/5 flex items-center justify-between"
+              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2.5 rounded-lg hover:bg-white/5 flex items-center justify-between"
             >
               <span>Horário de Funcionamento</span>
               <span className="text-xs text-[#22C55E]">{status.statusText}</span>
@@ -185,20 +178,13 @@ export const Navbar: React.FC = () => {
             <a
               href="#localizacao"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2 rounded-lg hover:bg-white/5"
+              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2.5 rounded-lg hover:bg-white/5"
             >
               Localização & GPS
             </a>
-            <a
-              href="#diferenciais"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-slate-200 hover:text-[#00E5FF] p-2 rounded-lg hover:bg-white/5"
-            >
-              Diferenciais Prime
-            </a>
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
             <a
               href={getWhatsAppUrl()}
               target="_blank"
@@ -206,7 +192,7 @@ export const Navbar: React.FC = () => {
               className="w-full py-3 rounded-xl font-bold text-sm text-center text-white bg-gradient-to-r from-[#22C55E] to-[#10B981] shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-5 h-5 fill-white/20" />
-              <span>Pedir no WhatsApp ({FORMATTED_PHONE})</span>
+              <span>Pedir no WhatsApp</span>
             </a>
           </div>
         </div>

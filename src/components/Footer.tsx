@@ -10,14 +10,14 @@ export const Footer: React.FC = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gradient-to-t from-[#FF2E93]/5 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/[0.08]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 pb-10 border-b border-white/[0.08]">
           {/* Col 1: Brand & Bio */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="md:col-span-2 space-y-3.5">
             <Logo size="md" />
-            <p className="text-sm text-slate-400 max-w-md leading-relaxed mt-4">
+            <p className="text-sm text-slate-400 max-w-md leading-relaxed mt-3">
               A conveniência e distribuidora de bebidas mais completa de Chapecó. Cervejas estupidamente geladas, combos exclusivos, chopp artesanal, gelo e carvão para o seu churrasco e fim de semana.
             </p>
-            <div className="flex items-center gap-3 pt-2 text-xs font-semibold text-slate-300">
+            <div className="flex items-center gap-2.5 pt-1 text-xs font-semibold text-slate-300">
               <span className="w-2.5 h-2.5 rounded-full bg-[#22C55E] animate-pulse" />
               <span>Bairro Alvorada • Chapecó - SC</span>
             </div>
@@ -35,8 +35,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#montar-pedido" className="hover:text-[#FF2E93] transition-colors">
-                  Montar Pedido Rápido
+                <a href="#diferenciais" className="hover:text-[#00E5FF] transition-colors">
+                  Diferenciais Prime
                 </a>
               </li>
               <li>
@@ -47,11 +47,6 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#localizacao" className="hover:text-[#00E5FF] transition-colors">
                   Localização & GPS
-                </a>
-              </li>
-              <li>
-                <a href="#diferenciais" className="hover:text-[#00E5FF] transition-colors">
-                  Diferenciais Prime
                 </a>
               </li>
             </ul>
@@ -94,7 +89,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Legal Disclaimer (+18) */}
-        <div className="py-6 border-b border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="py-5 border-b border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <div className="flex items-center gap-2 text-amber-500/80">
             <ShieldAlert className="w-4 h-4 flex-shrink-0" />
             <span>
@@ -107,7 +102,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <div>
             &copy; {new Date().getFullYear()} Prime Beer Conveniência. Todos os direitos reservados.
           </div>

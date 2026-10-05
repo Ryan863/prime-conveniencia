@@ -21,7 +21,7 @@ const FAQS: FaqItem[] = [
   {
     question: 'Como funciona o pedido pelo WhatsApp?',
     answer:
-      'É muito simples: você pode utilizar o simulador de pedidos aqui no site ou mandar uma mensagem direta no WhatsApp (+55 49 9834-3314). Nossa equipe confirma os itens, informa o valor e despacha seu pedido rapidamente.',
+      'É muito simples: basta clicar em qualquer botão do site ou mandar uma mensagem direta no WhatsApp (+55 49 9834-3314). Nossa equipe confirma os itens, informa o valor e despacha seu pedido rapidamente.',
   },
   {
     question: 'Como encomendar barril de Chopp para festas ou finais de semana?',
@@ -43,17 +43,17 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 relative bg-[#0E1117] overflow-hidden border-t border-white/[0.06]">
+    <section className="py-20 md:py-24 relative bg-[#0E1117] overflow-hidden border-t border-white/[0.06]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-4">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
             <span>Tire Suas Dúvidas</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Perguntas <span className="bg-gradient-to-r from-[#FF2E93] to-[#00E5FF] bg-clip-text text-transparent">Frequentes</span>
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             Tudo o que você precisa saber sobre nossos produtos, entregas e atendimento.
           </p>
         </div>
@@ -75,13 +75,13 @@ export const FaqSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 transition-colors"
                 >
                   <span className="font-display font-bold text-base sm:text-lg text-white">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
                       isOpen ? 'rotate-180 bg-[#00E5FF]/10 text-[#00E5FF]' : 'text-slate-400'
                     }`}
                   >
@@ -90,7 +90,7 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-white/[0.04] pt-4">
+                  <div className="px-4 sm:px-5 pb-5 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-white/[0.04] pt-3.5">
                     {faq.answer}
                   </div>
                 )}
@@ -100,7 +100,7 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center p-6 rounded-2xl bg-[#161922]/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 text-center p-5 sm:p-6 rounded-2xl bg-[#161922]/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left text-sm text-slate-300">
             <span className="font-bold text-white block">Ainda tem alguma pergunta específica?</span>
             Fale diretamente com nosso atendente no WhatsApp agora mesmo.

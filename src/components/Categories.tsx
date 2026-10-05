@@ -99,23 +99,23 @@ export const Categories: React.FC = () => {
   );
 
   return (
-    <section id="catalogo" ref={sectionRef} className="py-24 relative bg-[#0A0C0F] overflow-hidden">
+    <section id="catalogo" ref={sectionRef} className="py-20 md:py-24 relative bg-[#0A0C0F] overflow-hidden">
       {/* Background illumination */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#FF2E93]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00E5FF]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-14 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-white/10 text-xs font-semibold text-[#00E5FF] mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>Catálogo Rápido e Completo</span>
             </div>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Tudo o que você precisa para o seu <span className="bg-gradient-to-r from-[#FF2E93] to-[#00E5FF] bg-clip-text text-transparent">rolê</span> ou churrasco.
             </h2>
-            <p className="mt-4 text-slate-300 text-base sm:text-lg">
+            <p className="mt-3 text-slate-300 text-sm sm:text-base">
               Escolha uma categoria abaixo e peça diretamente pelo WhatsApp com atendimento ágil em Chapecó.
             </p>
           </div>
@@ -132,7 +132,7 @@ export const Categories: React.FC = () => {
         </div>
 
         {/* Bento Grid of 4 Categories */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
           {CATEGORIES.map((cat) => {
             const isPink = cat.neonColor === 'pink';
             const isCyan = cat.neonColor === 'cyan';
@@ -184,20 +184,20 @@ export const Categories: React.FC = () => {
                 </div>
 
                 {/* Content Details */}
-                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-white transition-colors">
                       {cat.title}
                     </h3>
-                    <p className="text-sm font-semibold text-slate-300 mt-1 mb-3">
+                    <p className="text-sm font-semibold text-slate-300 mt-1 mb-2.5">
                       {cat.tagline}
                     </p>
-                    <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                    <p className="text-sm text-slate-400 leading-relaxed mb-5">
                       {cat.description}
                     </p>
 
                     {/* Popular items list */}
-                    <div className="space-y-2 mb-6 pt-4 border-t border-white/[0.06]">
+                    <div className="space-y-2 mb-5 pt-3.5 border-t border-white/[0.06]">
                       <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
                         Mais pedidos na Prime Beer:
                       </div>
@@ -213,7 +213,7 @@ export const Categories: React.FC = () => {
                   </div>
 
                   {/* Direct WhatsApp Action for this Category */}
-                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-4">
+                  <div className="pt-3.5 border-t border-white/[0.08] flex items-center justify-between gap-4">
                     <a
                       href={getWhatsAppUrl(cat.whatsAppMessage)}
                       target="_blank"
